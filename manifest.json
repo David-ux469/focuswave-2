@@ -1,0 +1,25 @@
+{
+  "name": "focuswave - Control de Uso de Apps",
+  "short_name": "focuswave",
+  "description": "Aplicación para controlar y monitorear el uso de aplicaciones móviles",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a1a",
+  "theme_color": "#4ade80",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9IiMxYTFhMWEiLz4KPHBhdGggZD0iTTk2IDQ4QzY5LjQ5MDMgNDggNDggNjkuNDkwMyA0OCA5NkM0OCAxMjIuNTEgNjkuNDkwMyAxNDQgOTYgMTQ0QzEyMi41MSAxNDQgMTQ0IDEyMi41MSAxNDQgOTZDMTQ0IDY5LjQ5MDMgMTIyLjUxIDQ4IDk2IDQ4WiIgZmlsbD0iIzRhZGU4MCIvPgo8cGF0aCBkPSJNODggODhIMTA0VjEwNEg4OFY4OFoiIGZpbGw9IiMxYTFhMWEiLz4KPC9zdmc+",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iNjQiIGZpbGw9IiMxYTFhMWEiLz4KPHBhdGggZD0iTTI1NiAxMjhDMTg1LjMwNyAxMjggMTI4IDE4NS4zMDcgMTI4IDI1NkMxMjggMzI2LjY5MyAxODUuMzA3IDM4NCAyNTYgMzg0QzMyNi42OTMgMzg0IDM4NCAzMjYuNjkzIDM4NCAyNTZDMzg0IDE4NS4zMDcgMzI2LjY5MyAxMjggMjU2IDEyOFoiIGZpbGw9IiM0YWRlODAiLz4KPHA+",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["productivity", "utilities"],
+  "lang": "es",
+  "dir": "ltr"
+}

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>focuswave - Control de Uso de Apps</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4ade80">
+    <meta name="description" content="Aplicación para controlar y monitorear el uso de aplicaciones móviles">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Dashboard View -->
+        <div id="dashboard" class="screen active">
+            <header class="header">
+                <h1 class="app-title">focuswave</h1>
+                <div class="header-icons">
+                    <i class="fas fa-cog settings-icon"></i>
+                    <i class="fas fa-user profile-icon"></i>
+                </div>
+            </header>
+
+            <main class="dashboard-content">
+                <div class="stats-grid">
+                    <!-- Tiempo en otras apps -->
+                    <div class="stat-card octagon-card">
+                        <div class="octagon">
+                            <div class="octagon-content">
+                                <span class="stat-label">tiempo en otras apps</span>
+                                <span class="stat-value green">75%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tiempo total hoy -->
+                    <div class="stat-card dark-card">
+                        <span class="stat-label">tiempo en total hoy</span>
+                        <span class="stat-value">2:30 mins</span>
+                    </div>
+
+                    <!-- Redes sociales -->
+                    <div class="stat-card red-card">
+                        <span class="stat-label">redes sociales</span>
+                        <span class="stat-value">1 hora</span>
+                    </div>
+
+                    <!-- Otras apps -->
+                    <div class="stat-card green-card">
+                        <span class="stat-label">otras apps</span>
+                        <span class="stat-value">1:30 horas</span>
+                    </div>
+
+                    <!-- Desbloqueos -->
+                    <div class="stat-card dark-card">
+                        <span class="stat-label">desbloqueos</span>
+                        <span class="stat-value">27</span>
+                    </div>
+
+                    <!-- Notificaciones -->
+                    <div class="stat-card dark-card">
+                        <span class="stat-label">notificaciones</span>
+                        <span class="stat-value">93</span>
+                    </div>
+                </div>
+
+                <!-- Ver detalles button -->
+                <button class="details-btn" onclick="showAppUsage()">
+                    Ver Detalles de Apps
+                </button>
+            </main>
+        </div>
+
+        <!-- App Usage Details View -->
+        <div id="app-usage" class="screen">
+            <header class="header">
+                <i class="fas fa-arrow-left back-icon" onclick="showDashboard()"></i>
+                <h1 class="app-title">focuswave</h1>
+            </header>
+
+            <main class="usage-content">
+                <h2 class="usage-title">tiempo en total en apps</h2>
+                
+                <div class="app-list">
+                    <div class="app-item">
+                        <div class="app-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="app-info">
+                            <span class="app-name">Usuario</span>
+                            <span class="app-time">15 mins</span>
+                        </div>
+                    </div>
+
+                    <div class="app-item">
+                        <div class="app-icon tiktok">
+                            <i class="fab fa-tiktok"></i>
+                        </div>
+                        <div class="app-info">
+                            <span class="app-name">TikTok</span>
+                            <span class="app-time">10 mins</span>
+                        </div>
+                    </div>
+
+                    <div class="app-item">
+                        <div class="app-icon twitter">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                        <div class="app-info">
+                            <span class="app-name">X (Twitter)</span>
+                            <span class="app-time">2 mins</span>
+                        </div>
+                    </div>
+
+                    <div class="app-item">
+                        <div class="app-icon email">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="app-info">
+                            <span class="app-name">Email</span>
+                            <span class="app-time">2:30 horas</span>
+                        </div>
+                    </div>
+
+                    <div class="app-item">
+                        <div class="app-icon instagram">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div class="app-info">
+                            <span class="app-name">Instagram</span>
+                            <span class="app-time">45 mins</span>
+                        </div>
+                    </div>
+
+                    <div class="app-item">
+                        <div class="app-icon whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="app-info">
+                            <span class="app-name">WhatsApp</span>
+                            <span class="app-time">30 mins</span>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Analytics Dashboard View -->
+        <div id="analytics" class="screen">
+            <header class="header">
+                <i class="fas fa-arrow-left back-icon" onclick="showDashboard()"></i>
+                <h1 class="app-title">focuswave</h1>
+            </header>
+
+            <main class="analytics-content">
+                <div id="analytics-content">
+                    <!-- Analytics content will be dynamically loaded here -->
+                </div>
+            </main>
+        </div>
+
+        <!-- Settings/Profile View -->
+        <div id="settings" class="screen">
+            <header class="header">
+                <i class="fas fa-arrow-left back-icon" onclick="showDashboard()"></i>
+                <h1 class="app-title">focuswave</h1>
+            </header>
+
+            <main class="settings-content">
+                <div class="settings-section">
+                    <h3>👤 Perfil de Usuario</h3>
+                    <div class="profile-card">
+                        <div class="profile-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="profile-info">
+                            <span class="profile-name" id="user-name">Usuario Anónimo</span>
+                            <span class="profile-email" id="user-email">No registrado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3>🎯 Objetivos de Bienestar</h3>
+                    <div class="goal-item">
+                        <span class="goal-label">Tiempo diario máximo</span>
+                        <div class="goal-control">
+                            <input type="range" id="max-time" min="1" max="8" value="4" class="slider">
+                            <span class="goal-value" id="max-time-value">4 horas</span>
+                        </div>
+                    </div>
+                    <div class="goal-item">
+                        <span class="goal-label">Desbloqueos máximos</span>
+                        <div class="goal-control">
+                            <input type="range" id="max-unlocks" min="10" max="100" value="50" class="slider">
+                            <span class="goal-value" id="max-unlocks-value">50</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3>🔔 Notificaciones</h3>
+                    <div class="setting-item">
+                        <span class="setting-label">Alertas de límites</span>
+                        <label class="switch">
+                            <input type="checkbox" id="limit-alerts" checked>
+                            <span class="slider-switch"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <span class="setting-label">Recordatorios de descanso</span>
+                        <label class="switch">
+                            <input type="checkbox" id="break-reminders" checked>
+                            <span class="slider-switch"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3>📊 Datos</h3>
+                    <button class="settings-btn" onclick="app.exportData()">
+                        📤 Exportar Datos
+                    </button>
+                    <button class="settings-btn" onclick="app.importData()">
+                        📥 Importar Datos
+                    </button>
+                    <button class="settings-btn danger" onclick="app.clearAllData()">
+                        🗑️ Limpiar Todos los Datos
+                    </button>
+                </div>
+
+                <div class="settings-section">
+                    <h3>ℹ️ Información</h3>
+                    <div class="info-item">
+                        <span class="info-label">Versión</span>
+                        <span class="info-value">1.0.0</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Última actualización</span>
+                        <span class="info-value" id="last-update">Hoy</span>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Loading indicator -->
+    <div id="loading-indicator" class="loading-indicator">
+        <div class="loading-spinner"></div>
+        <span>Cargando focuswave...</span>
+    </div>
+
+    <!-- Toast notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
